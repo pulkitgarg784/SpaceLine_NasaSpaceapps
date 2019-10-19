@@ -13,11 +13,11 @@ public class Gravity : MonoBehaviour
 	// 1 Mass is 1/1000 of Earth
 	private void Start()
 	{
-		Time.timeScale = 20;
+		Time.timeScale = 100;
 		rb = this.transform.GetComponent<Rigidbody>();
 		if (!star)
 		{
-			rb.AddForce(rb.transform.forward * 100000);
+			rb.AddForce(rb.transform.forward * 10000);
 		}
 	}
 	void FixedUpdate()
