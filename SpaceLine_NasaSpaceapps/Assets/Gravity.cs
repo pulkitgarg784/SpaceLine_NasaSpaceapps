@@ -7,17 +7,19 @@ public class Gravity : MonoBehaviour
     const float G = 6674f;
 
     public static List<Gravity> Attractors;
+	//StarValue
 
-    public Rigidbody rb;
+	public Rigidbody rb;
+	//ObjectSpecific Vars
 	public bool star;
+	public int StartVelocity;
 	// 1 Mass is 1/1000 of Earth
 	private void Start()
 	{
-		Time.timeScale = 100;
 		rb = this.transform.GetComponent<Rigidbody>();
 		if (!star)
 		{
-			rb.AddForce(rb.transform.forward * 10000);
+			rb.AddForce(rb.transform.forward * StartVelocity);
 		}
 	}
 	void FixedUpdate()
