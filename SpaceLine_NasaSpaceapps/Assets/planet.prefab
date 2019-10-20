@@ -246,7 +246,7 @@ MonoBehaviour:
   Star: {fileID: 0}
   PlanetSize: {fileID: 0}
   PlanetSpeed: {fileID: 0}
-  resolution: 16
+  resolution: 64
   frequency: 1
   octaves: 1
   lacunarity: 2
@@ -298,6 +298,11 @@ MonoBehaviour:
   planetSpeed: 0
   planetMass: 20
   planetTemp: 20
+  Life: 0
+  Message: 
+  oxy: 0
+  nitro: 0
+  carb: 0
 --- !u!114 &114141212407213118
 MonoBehaviour:
   m_ObjectHideFlags: 0

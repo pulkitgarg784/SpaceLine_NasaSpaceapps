@@ -1399,7 +1399,7 @@ MonoBehaviour:
   Prefab: {fileID: 4062877236835430206, guid: 71117c456482b4849bbd328bcc81ab2c, type: 3}
   RayDistance: 10000
   tempText: {fileID: 269080393}
-  atmosText: {fileID: 0}
+  atmosText: {fileID: 958993451}
   lifeText: {fileID: 1491819797}
   lifeMessage: {fileID: 101660312}
 --- !u!1 &449042773
@@ -2071,7 +2071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722099282}
   m_LocalRotation: {x: 0.2681743, y: 0.0043342304, z: -0.0012065273, w: 0.9633599}
-  m_LocalPosition: {x: -15, y: 1250, z: -1750}
+  m_LocalPosition: {x: -15, y: 1250, z: -1449}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 722321526}
@@ -2837,7 +2837,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4

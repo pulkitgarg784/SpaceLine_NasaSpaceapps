@@ -19,12 +19,39 @@ public class lifePredictor : MonoBehaviour
 		{
 			if (planetValues.planetMass >= 4 && planetValues.planetMass <= 40)
 			{
-				planetValues.Life = true;
-				planetValues.Message = "All the conditions for life are met!";
+				if (planetValues.oxy <= 35 && planetValues.oxy >=15 && planetValues.carb >= 0.5 && planetValues.carb <= 10)
+				{
+					planetValues.Life = true;
+					planetValues.Message = "All the conditions for life are met!";
+				}
+				else if(planetValues.oxy > 35)
+				{
+					planetValues.Life = false;
+					planetValues.Message = "Your planet has a very high oxygen content, the organisms will die of oxygen poisoning and the planet chemistry will be very volatile";
+				}
+				else if (planetValues.oxy < 15)
+				{
+					planetValues.Life = false;
+					planetValues.Message = "Due to scarecity of Oxygen, chemical reactions will be slow and complex lifeforms cannot exist";
+				}
+				else if (planetValues.carb < .05)
+				{
+					planetValues.Life = false;
+					planetValues.Message = "Plant lifeforms canno exist without C02 which is a byproduct of life";
+				}
+				else if (planetValues.carb > 10)
+				{
+					planetValues.Life = false;
+					planetValues.Message = "High surface temperature due to green house effect, Oceans will boil away";
+				}
 			}
-			else
+			else if(planetValues.planetMass < 4)
 			{
 				planetValues.Message = "Planet's Gravity is too low, Atmosphere escaped the planet, water boiled away and the stars radiations scorched it's surface";
+			}
+			else if (planetValues.planetMass > 40)
+			{
+				planetValues.Message = "Planet's Gravity is too high, Complex life structures cannot form due to the Square–cube law";
 			}
 		}
 		else if (planetValues.planetTemp < -5) {
