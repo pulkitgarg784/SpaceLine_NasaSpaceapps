@@ -11,10 +11,18 @@ public class Planet : MonoBehaviour
 	//inputs
 	public InputField PlanetSize;
 	public InputField PlanetSpeed;
+	private Sliders sliders;
+
 	private Rigidbody rb;
 	//values
 	private PlanetValues planetValues;
+
 	private StarValues starValues;
+	//private Slider oxygen;
+	//private Slider nitrogen;
+	//private Slider carbondioxide;
+
+
 
 
 
@@ -54,13 +62,22 @@ public class Planet : MonoBehaviour
 		Star = GameObject.FindGameObjectWithTag("Star");
 		PlanetSize = GameObject.Find("PlanetSize").GetComponent<InputField>();
 		PlanetSpeed = GameObject.Find("PlanetSpeed").GetComponent<InputField>();
+		sliders = GameObject.Find("Sliders").GetComponent<Sliders>();
+
+
 		planetValues = GetComponent<PlanetValues>();
 		starValues = Star.GetComponent<StarValues>();
 		rb = GetComponent<Rigidbody>();
 
 
+
+
+
 		planetValues.planetSize = int.Parse(PlanetSize.text);
 		planetValues.planetSpeed = int.Parse(PlanetSpeed.text);
+		planetValues.oxy = sliders.oxygenValue;
+		planetValues.nitro = sliders.nitrogenValue;
+		planetValues.carb = sliders.co2Value;
 
 
 		target = Star.transform;

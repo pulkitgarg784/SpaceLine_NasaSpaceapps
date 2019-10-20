@@ -21,8 +21,8 @@ public class ClickSpawnScript : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Planet")
 		{
-			tempText.text = hit.transform.GetComponent<PlanetValues>().planetTemp.ToString();
-			lifeText.text = hit.transform.GetComponent<PlanetValues>().Life.ToString();
+			tempText.text = hit.transform.GetComponent<PlanetValues>().planetTemp.ToString() + " C";
+			lifeText.text = "Life: " + hit.transform.GetComponent<PlanetValues>().Life.ToString();
 			lifeMessage.text = hit.transform.GetComponent<PlanetValues>().Message;
 
 		}

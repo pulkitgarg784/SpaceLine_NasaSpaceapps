@@ -10,6 +10,10 @@ public class PlanetValues : MonoBehaviour
 	public float planetTemp;
 	public bool Life;
 	public string Message;
+	public float oxy;
+	public float nitro;
+	public float carb;
+
 
 
 
