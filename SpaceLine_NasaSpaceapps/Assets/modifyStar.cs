@@ -48,7 +48,7 @@ public class modifyStar : MonoBehaviour
 				drawer.SetActive(false);
 				isOpen = false;
 				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = true;
+				Cursor.visible = false;
 				flc.enabled = true;
 
 			}

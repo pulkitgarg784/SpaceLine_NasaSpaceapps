@@ -42,6 +42,7 @@ public class lifePredictor : MonoBehaviour
 				else if (planetValues.carb > 10)
 				{
 					planetValues.Life = false;
+					planetValues.planetTemp += 50;
 					planetValues.Message = "High surface temperature due to green house effect, Oceans will boil away";
 				}
 			}
