@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityStandardAssets.Cameras;
 
 public class modifyStar : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class modifyStar : MonoBehaviour
 	public Slider TempSlider;
 	public InputField nameField;
 	public Text nameLabel;
+	public Text tempLabel;
 
 	private bool isOpen;
 	public GameObject drawer;
@@ -18,16 +19,23 @@ public class modifyStar : MonoBehaviour
 	public StarValues starvalues;
 	private Rigidbody rb;
 	Renderer rend;
+	public ClickSpawnScript cks;
+	public FreeLookCam flc;
 	
 	// Start is called before the first frame update
 	void Start()
     {
+		//references
 		starvalues = GetComponent<StarValues>();
 		rb = this.transform.GetComponent<Rigidbody>();
 		rend = GetComponent<Renderer>();
-
+		//settings 
 		transform.localScale = new Vector3(starvalues.starSize, starvalues.starSize, starvalues.starSize);
 		ChangeSize();
+		//Cursor
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = true;
+		
 	}
 
     // Update is called once per frame
@@ -39,6 +47,10 @@ public class modifyStar : MonoBehaviour
 			{
 				drawer.SetActive(false);
 				isOpen = false;
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = true;
+				flc.enabled = true;
+
 			}
 		}
 	}
@@ -50,6 +62,11 @@ public class modifyStar : MonoBehaviour
 			{
 				drawer.SetActive(true);
 				isOpen = true;
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+				cks.enabled = false;
+				flc.enabled = false;
+
 			}
 		}
 	}
@@ -77,7 +94,6 @@ public class modifyStar : MonoBehaviour
 	}
 	public void ChangeTemp()
 	{
-
 		 if (starvalues.starSize <= 330 && starvalues.starSize >= 90)
 		{
 			TempSlider.minValue = 10000f;
@@ -117,6 +133,8 @@ public class modifyStar : MonoBehaviour
 			rend.material.color = new Color(.7f, 0.0f, 0.0f);
 
 		}
+		starvalues.starTemp = TempSlider.value;
+		tempLabel.text = starvalues.starTemp.ToString();
 
 	}
 	public void changeName() {

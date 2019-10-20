@@ -12,14 +12,11 @@ public class Gravity : MonoBehaviour
 	public Rigidbody rb;
 	//ObjectSpecific Vars
 	public bool star;
-	public int StartVelocity;
-	// 1 Mass is 1/1000 of Earth
 	private void Start()
 	{
 		rb = this.transform.GetComponent<Rigidbody>();
 		if (!star)
 		{
-			rb.AddForce(rb.transform.forward * StartVelocity);
 		}
 	}
 	void FixedUpdate()
