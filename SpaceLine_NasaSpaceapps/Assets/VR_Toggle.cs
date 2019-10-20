@@ -23,7 +23,10 @@ public class VR_Toggle : MonoBehaviour
 			{
 				Debug.Log("enabled");
 				XRSettings.enabled = true;
+				XRSettings.eyeTextureResolutionScale = 1.5f;
+				XRSettings.renderViewportScale = 1.5f;
 				isEnabled = true;
+
 			}
 			else if (isEnabled)
 			{
